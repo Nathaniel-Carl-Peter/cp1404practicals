@@ -5,13 +5,6 @@ Author: Nathaniel Carl Peter
 Socre function
 """
 
-# https://peps.python.org/pep-0020/
-# Check Indenting.
-# Flat is better than nested quote from "The Zen of Python".
-# Use less if, elif conditions.
-# Check boundary conditions (E.g. Rather than > 50, use >= 50 since score of 50 is considered passable)
-# Use less if/elsif condition
-
 """
 Pseudo:
 get_score
