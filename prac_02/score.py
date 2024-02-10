@@ -55,6 +55,7 @@ def define_grade(score):
 
 
 def get_score():
+    """Get score from the user"""
     score = float(input("Enter grade: "))
     return score
 
