@@ -1,5 +1,5 @@
 """
-CP1404/CP5632 - Practical
+CP1404/CP5632 - Practical 02
 Date: 10/02/2024
 Author: Nathaniel Carl Peter
 Socre function
