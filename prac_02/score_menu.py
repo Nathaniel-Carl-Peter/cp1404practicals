@@ -20,7 +20,7 @@ def main():
         score = get_score()
         grade = define_grade(score)
         print(grade)
-    if choice == "S":
+    elif choice == "S":
         # Print number of stars
         user_number = get_valid_number()
         print_number_of_stars(user_number)
