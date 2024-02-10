@@ -8,7 +8,7 @@ Date: 10/02/2024
 # (S)how stars (this should print as many stars as the score)
 # (Q)uit
 
-MENU = "(V)alid score\n(S)tars\n(Q)uit"
+MENU = "Menu:\n(V)alid score\n(S)tars\n(Q)uit"
 
 
 def main():
