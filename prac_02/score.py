@@ -39,15 +39,25 @@ else
 
 def main():
     """Main score program"""
-    score = float(input("Enter score: "))
+    score = get_score()
+    grade = define_grade(score)
+    print(grade)
+
+
+def define_grade(score):
     if score < 0 or score > 100:
-        print("Invalid score")
+        return "Invalid score"
     elif score >= 90:
-        print("Excellent")
+        return "Excellent"
     elif score >= 50:
-        print("Passable")
+        return "Passable"
     else:
-        print("Bad")
+        return "Bad"
+
+
+def get_score():
+    score = random.randint(1, 101)
+    return score
 
 
 main()
