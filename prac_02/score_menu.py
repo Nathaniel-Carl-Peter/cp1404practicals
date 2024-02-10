@@ -1,5 +1,5 @@
 """
-CP1404 - Programming 2
+CP1404 - Programming 2 - Score Menu
 Date: 10/02/2024
 """
 
@@ -15,21 +15,34 @@ def main():
     """Main score program"""
     print(MENU)
     choice = input(">>> ").upper()
+    if choice == "V":
+        # Determined score
+        score = get_score()
+        grade = define_grade(score)
+        print(grade)
+    if choice == "S":
+        # Print number of stars
+        user_number = get_valid_number()
+        print_number_of_stars(user_number)
+    else:
+        print("Invalid choice")
     while choice != "Q":
-        if choice == "V":
-            score = get_score()
-            grade = define_grade(score)
-            print(grade)
-        elif choice == "S":
-            user_number = int(input(f"Enter valid number: "))
-            while user_number < score:
-                user_number = int(input(f"Enter valid number: "))
-            print("*" * len(user_number))
-        else:
-            print("Invalid choice")
         print(MENU)
         choice = input(">>> ").upper()
     print("Thank you")
+
+
+def get_valid_number():
+    """Get valid number"""
+    user_number = int(input(f"Enter valid number: "))
+    return user_number
+
+
+def print_number_of_stars(user_number):
+    """Print number of stars"""
+    for i in range(user_number):
+        print("*", end="")
+    print()
 
 
 def get_score():
