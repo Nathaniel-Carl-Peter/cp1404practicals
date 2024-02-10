@@ -1,5 +1,3 @@
-import random
-
 """
 CP1404/CP5632 - Practical
 Date: 10/02/2024
@@ -45,6 +43,7 @@ def main():
 
 
 def define_grade(score):
+    """Determine grade"""
     if score < 0 or score > 100:
         return "Invalid score"
     elif score >= 90:
@@ -56,7 +55,7 @@ def define_grade(score):
 
 
 def get_score():
-    score = random.randint(1, 101)
+    score = float(input("Enter grade: "))
     return score
 
 
