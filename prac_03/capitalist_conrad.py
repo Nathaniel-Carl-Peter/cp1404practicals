@@ -40,12 +40,3 @@ while MIN_PRICE <= price <= MAX_PRICE:
     print(f"On day {number_of_days} price is : ${price:,.2f}", file=out_file)
 out_file.close()  # Close file
 
-"""
-Output:
-
-Starting price: $10.00  
-On day 1 price is: $9.89  
-...  
-On day 424 price is: $915.71  
-On day 425 price is: $1,001.60  
-"""
