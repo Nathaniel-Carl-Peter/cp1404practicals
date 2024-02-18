@@ -8,7 +8,7 @@ print(random.uniform(1, 101))
 # What did you see on line 1?
 # What was the smallest number you could have seen, what was the largest?
 # smallest = 5
-# largest = 17
+# largest = 19
 
 # What did you see on line 2?
 # What was the smallest number you could have seen, what was the largest?
