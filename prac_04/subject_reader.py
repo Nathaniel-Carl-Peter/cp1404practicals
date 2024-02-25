@@ -9,10 +9,10 @@ FILENAME = "subject_data.txt"
 def main():
 
     subjects = get_subjects()
-    display_subjects(subjects)
+    print_subjects(subjects)
 
 
-def display_subjects(subjects):
+def print_subjects(subjects):
     for subject in subjects:
         print(f"{subject[0]} is taught by {subject[0]:12} and has {subject[0]:3} students")
 
