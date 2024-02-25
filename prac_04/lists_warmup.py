@@ -16,3 +16,4 @@ numbers[6] = 1
 print(numbers[2:])
 # Print whether 9 is an element of numbers
 # True
+print(9 in numbers)
