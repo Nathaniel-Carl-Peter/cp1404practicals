@@ -7,12 +7,13 @@ FILENAME = "subject_data.txt"
 
 
 def main():
-
+    """Main subject Reader program"""
     subjects = get_subjects()
     print_subjects(subjects)
 
 
 def print_subjects(subjects):
+    """Prints subjects"""
     for subject in subjects:
         print(f"{subject[0]} is taught by {subject[0]:12} and has {subject[0]:3} students")
 
