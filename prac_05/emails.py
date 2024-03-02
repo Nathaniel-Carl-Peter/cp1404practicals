@@ -27,6 +27,7 @@ for name, email in email to names:
 # Ask the user for their email until they enter a blank one.
 # Use a separate function to extract a name from the email as in the example below.
 # You should find the following methods useful: split, join, title
+
 def main():
     """Main Email Program"""
     email_to_names = {}
@@ -54,19 +55,3 @@ def get_name_from_email(email):
 
 
 main()
-"""
-Output:
-
-Email: lindsay.ward@jcu.edu.au
-Is your name Lindsay Ward? (Y/n)
-Email: abe@gmail.com
-Is your name Abe? (Y/n) y
-Email: jimbo546@hotmail.com
-Is your name Jimbo546? (Y/n) no
-Name: Jim Boh
-Email: 
-
-Lindsay Ward (lindsay.ward@jcu.edu.au)
-Abe (Abe@gmail.com)
-Jim Boh (jimbo546@hotmail.com)
-"""
