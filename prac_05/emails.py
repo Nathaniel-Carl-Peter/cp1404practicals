@@ -7,17 +7,18 @@ Nathaniel Carl Peter
 """
 Pseudo:
 
-email_to_names = {}
-get email
-while email != ""
-    get name from email
-    get confirmation
-    if confirmation != Y and confirmation != ""
-        get name
-    add email and name to list
+def main
+    email_to_names = {}
     get email
-for name, email in email to names:
-    print email and names
+    while email != ""
+        get name from email
+        get confirmation
+        if confirmation != Y and confirmation != ""
+            get name
+        add email and name to list
+        get email
+    for name, email in email to names:
+        print email and names
 
 
 """
