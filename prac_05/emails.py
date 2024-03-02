@@ -45,11 +45,11 @@ def main():
 def get_name_from_email(email):
     """Get name from Email"""
     prefix = email.split('@')[0]
-    # print(prefix)
+    # print(prefix) # Check output of prefix
     parts = prefix.split('.')
-    # print(parts)
+    # print(parts) # Check output of parts
     name = " ".join(parts).title()
-    # print(name)
+    # print(name) # Check output for name
     return name
 
 
