@@ -15,7 +15,7 @@ class Guitar:
 
     def __str__(self):
         """Output as a string"""
-        return f"Guitar: {self.name} ({self.year}) : ${self.cost}"
+        return f"Guitar: {self.name} ({self.year}) : ${self.cost:.2f}"
 
     def get_age(self):
         """Get age of guitar based on 2013"""
@@ -23,4 +23,4 @@ class Guitar:
 
     def is_vintage(self):
         """Identify if guitar is vintage"""
-        return self.get_age() >= CURRENT_YEAR
+        return self.get_age() >= VINTAGE
