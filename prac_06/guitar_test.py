@@ -7,26 +7,17 @@ def test():
     year = 1922
     cost = 16035.40
     guitar = Guitar(name, year, cost)
+    other = Guitar("Another Guitar", )
     print(guitar)
+
+    print(f"My guitar: {name}, first made in {year} ${cost}")
 
 
 test()
 
 """
-Output:
-
-My guitars!
-Name: Fender Stratocaster
-Year: 2014
-Cost: $765.4
-Fender Stratocaster (2014) : $765.40 added.
-
-Name:
-
-... snip ...
-
-These are my guitars:
-Guitar 1:       Gibson L-5 CES (1922), worth $ 16,035.40 (vintage)
-Guitar 2:        Line 6 JTV-59 (2010), worth $  1,512.90
-Guitar 3:  Fender Stratocaster (2014), worth $    765.40
+Gibson L-5 CES get_age() - Expected 100. Got 100
+Another Guitar get_age() - Expected 9. Got 9
+Gibson L-5 CES is_vintage() - Expected True. Got True
+Another Guitar is_vintage() - Expected False. Got False
 """
