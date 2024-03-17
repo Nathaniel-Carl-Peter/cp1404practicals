@@ -1,3 +1,7 @@
+CURRENT_YEAR = 2013
+VINTAGE = 50
+
+
 class Guitar:
     """Represent a Car object."""
 
@@ -13,26 +17,10 @@ class Guitar:
 
     """Guitar 1:       Gibson L-5 CES (1922), worth $ 16,035.40 (vintage)"""
 
+    def get_age(self):
+        """Get age of guitar"""
+        return CURRENT_YEAR - self.year
+
     def vintage(self):
-        if self.year > 50:
-            return "vintage"
-        else:
-            return ""
-
-    def add_fuel(self, amount):
-        """Add amount to the car's fuel."""
-        self.fuel += amount
-
-    def drive(self, distance):
-        """Drive the car a given distance.
-
-        Drive given distance if car has enough fuel
-        or drive until fuel runs out return the distance actually driven.
-        """
-        if distance > self.fuel:
-            distance = self.fuel
-            self.fuel = 0
-        else:
-            self.fuel -= distance
-        self._odometer += distance
-        return distance
+        """Indentify if guitar is vintage"""
+        return self.get_age() >= CURRENT_YEAR

@@ -1,9 +1,16 @@
-from prac_06 import Guitar
+from prac_06.guitar import Guitar
 
 
-def main():
+def test():
     """Guitar test program"""
+    name = "Gibson L-5 CES"
+    year = 1922
+    cost = 16035.40
+    guitar = Guitar(name, year, cost)
+    print(guitar)
 
+
+test()
 
 """
 Output:
