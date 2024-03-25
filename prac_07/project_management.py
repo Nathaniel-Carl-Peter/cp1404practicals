@@ -1,8 +1,14 @@
 import datetime
 
+FILENAME = "projects.txt"
 MENU = "- (L)oad projects \n- (S)ave projects \n- (D)isplay projects\n(F)ilter projects by date\n- (A)dd new project  " \
        "\n- (U)pdate project \n- (Q)uit"
-FILENAME = "projects.txt"
+
+
+def load_file(filename):
+    """Load project txt"""
+    in_file = open(filename, 'r')
+    pass
 
 
 def main():
@@ -13,12 +19,18 @@ def main():
     while choice != 'Q':
         if choice == 'L':
             print('Load')
+            projects = load_file()
         elif choice == 'D':
             print('Display')
         elif choice == 'F':
             print('Filter by date')
         elif choice == 'A':
             print('Add')
+            name = input("Name: ").title()
+            date = int(input(">>> "))
+            priority = int(input(">>> "))
+            cost = float(input(">>> "))
+            completion = int(input('>>> '))
         elif choice == 'U':
             print('Update')
         else:

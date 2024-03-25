@@ -18,6 +18,15 @@ def main():
     # 'Consume' the first line (header) - we don't need its contents
     in_file.readline()
     # All other lines are language data
+    name = input("Name: ")
+    while name == "":
+        name = input("Name: ")
+        typing = input("Typing: ")
+        reflection = input("Reflection: ")
+        year = int(input("Year: "))
+        pointer_arithmatic = input("Pointer arithmatic: ")
+        langauge_added = ProgrammingLanguage(name, typing, reflection, year, pointer_arithmatic)
+        print(f"{langauge_added}, added")
     for line in in_file:
         # print(repr(line))  # debugging
         # Strip newline from end and split it into parts (CSV)
@@ -84,4 +93,13 @@ def using_csv_namedtuple():
         print(language.name, 'was released in', language.year)
         print(repr(language))
 
+
 # using_csv_namedtuple()
+
+"""
+Add another language to the file - and make sure it still works properly. Use data from this Programming Language Comparison page
+Add another field to your ProgrammingLanguage class: Pointer Arithmetic (see that page or search to find if the language has it or not). This will be a Boolean variable.
+This may take a bit of effort, as you need to update the class and any code that uses it. You also need to add the correct values to your data file (in a form similar to reflection).
+Check that your code is complete including updating any docstrings.
+Are __str__ and other methods complete and good?
+"""
