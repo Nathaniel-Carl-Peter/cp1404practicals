@@ -12,11 +12,3 @@ class Projects:
     def __str__(self):
         """Output as str"""
         return f"{self.name}, {self.start_date}, {self.priority}, {self.cost}, {self.completion}"
-
-
-def load_file():
-
-
-
-def test():
-    projects = load_file()

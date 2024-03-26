@@ -1,14 +1,10 @@
+# from operator import attrgetter
+from projects import Projects
 import datetime
 
 FILENAME = "projects.txt"
-MENU = "- (L)oad projects \n- (S)ave projects \n- (D)isplay projects\n(F)ilter projects by date\n- (A)dd new project  " \
+MENU = "- (L)oad projects \n- (S)ave projects \n- (D)isplay projects\n- (F)ilter projects by date\n- (A)dd new project  " \
        "\n- (U)pdate project \n- (Q)uit"
-
-
-def load_file(filename):
-    """Load project txt"""
-    in_file = open(filename, 'r')
-    pass
 
 
 def main():
@@ -19,27 +15,51 @@ def main():
     while choice != 'Q':
         if choice == 'L':
             print('Load')
-            projects = load_file()
+            projects = load_file(FILENAME)
         elif choice == 'D':
             print('Display')
+            for i, project in enumerate(projects):
+                print(f'{project}')
         elif choice == 'F':
             print('Filter by date')
         elif choice == 'A':
             print('Add')
             name = input("Name: ").title()
-            date = int(input(">>> "))
+            start_date = input("Date (d/m/yyyy): ")  # e.g., "30/9/2022"
+            date = datetime.datetime.strptime(start_date, "%d/%m/%Y").date()
+            # print(f"That day is/was {date.strftime('%A')}")
+            # print(date.strftime("%d/%m/%Y"))
             priority = int(input(">>> "))
             cost = float(input(">>> "))
             completion = int(input('>>> '))
+            project_added = Projects(name, start_date, priority, cost, completion)
+            projects.append(project_added)
         elif choice == 'U':
             print('Update')
         else:
             print('Invalid input')
         print(MENU)
         choice = input('>>> ').upper()
+    print()
     print('Thank you for using custom-built project management software.')
 
 
+def load_file(filename):
+    """Load project txt"""
+    projects = []
+    with open(filename, 'r') as in_file:
+        in_file.readline()  # Skip the header line
+        for line in in_file:
+            parts = line.strip().rstrip()
+            # print(parts)
+            print(repr(parts))
+
+    # pass
+
+
+if __name__ == '__main__':
+    main()
+    # load_file(FILENAME)
 """
 import datetime
 
