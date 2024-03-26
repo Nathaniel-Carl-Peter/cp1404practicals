@@ -6,6 +6,7 @@ File and class example - opens/reads a file, stores in objects of custom class
 
 import csv
 from collections import namedtuple
+
 from programming_language import ProgrammingLanguage
 
 
@@ -25,10 +26,11 @@ def main():
         # print(parts)  # debugging
         # Reflection is stored as a string (Yes/No) and we want a Boolean
         reflection = parts[2] == "Yes"
-        pointer_arithmatic = parts[3] = 'Yes'
+        # Point arithmetic is stored as a string (Yes/No) and we want a Boolean
+        pointer_arithmetic = parts[3] = "Yes"
         # Construct a ProgrammingLanguage object using the elements
         # year should be an int
-        language = ProgrammingLanguage(parts[0], parts[1], reflection, pointer_arithmatic, int(parts[4]))
+        language = ProgrammingLanguage(parts[0], parts[1], reflection, pointer_arithmetic, int(parts[4]))
         # Add the language we've just constructed to the list
         languages.append(language)
     # Close the file as soon as we've finished reading it
@@ -58,7 +60,7 @@ def using_csv():
 
 
 def using_namedtuple():
-    """Language file reader version usin g a named tuple."""
+    """Language file reader version using a named tuple."""
     in_file = open('languages.csv', 'r', newline='')
     file_field_names = in_file.readline().strip().split(',')
     print(file_field_names)
