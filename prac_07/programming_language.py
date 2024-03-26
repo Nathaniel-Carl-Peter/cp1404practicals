@@ -28,13 +28,10 @@ def test():
     java = ProgrammingLanguage('Java', 'Static', False, False, 1995)
     # print(python)
     languages = [python, ruby, visual_basic, java]
-    # Using comprehensions
-    # dynamic_language = [language for language in languages if language.is_dynamic() == True]
-    # print(dynamic_language)
-    # No comprehensions
     for language in languages:
         if language.pointer_arithmatic():
             print(language.name)
 
 
-test()
+if __name__ == '__main__':
+    test()

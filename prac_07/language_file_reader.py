@@ -18,15 +18,6 @@ def main():
     # 'Consume' the first line (header) - we don't need its contents
     in_file.readline()
     # All other lines are language data
-    name = input("Name: ")
-    while name == "":
-        name = input("Name: ")
-        typing = input("Typing: ")
-        reflection = input("Reflection: ")
-        year = int(input("Year: "))
-        pointer_arithmatic = input("Pointer arithmatic: ")
-        langauge_added = ProgrammingLanguage(name, typing, reflection, year, pointer_arithmatic)
-        print(f"{langauge_added}, added")
     for line in in_file:
         # print(repr(line))  # debugging
         # Strip newline from end and split it into parts (CSV)
@@ -34,9 +25,10 @@ def main():
         # print(parts)  # debugging
         # Reflection is stored as a string (Yes/No) and we want a Boolean
         reflection = parts[2] == "Yes"
+        pointer_arithmatic = parts[3] = 'Yes'
         # Construct a ProgrammingLanguage object using the elements
         # year should be an int
-        language = ProgrammingLanguage(parts[0], parts[1], reflection, int(parts[3]))
+        language = ProgrammingLanguage(parts[0], parts[1], reflection, pointer_arithmatic, int(parts[4]))
         # Add the language we've just constructed to the list
         languages.append(language)
     # Close the file as soon as we've finished reading it
@@ -66,7 +58,7 @@ def using_csv():
 
 
 def using_namedtuple():
-    """Language file reader version using a named tuple."""
+    """Language file reader version usin g a named tuple."""
     in_file = open('languages.csv', 'r', newline='')
     file_field_names = in_file.readline().strip().split(',')
     print(file_field_names)
