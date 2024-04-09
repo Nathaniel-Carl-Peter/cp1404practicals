@@ -1,6 +1,6 @@
 FILENAME = 'guitars.csv'
-import csv
-from guitar import Guitar
+from prac_07.guitar import Guitar
+from operator import attrgetter
 
 
 def load_file(filename):
@@ -23,13 +23,20 @@ def load_file(filename):
 def main():
     """Guitar client program"""
     guitars = load_file(FILENAME)
+    guitars.sort(key=attrgetter('year'))
     print("My guitars!")
+    for i, guitar in enumerate(guitars, 1):
+        vintage_string = ""
+        if guitar.is_vintage():
+            vintage_string = "(vintage)"
+        print(f"Guitar {i}: {guitar.name:>20} ({guitar.year}), worth ${guitar.cost:10,.2f}{vintage_string}")
+    print('--' * 35)
     name = input("Enter name: ").title()
     while name != "":
         year = int(input("Year: "))
         cost = float(input("Cost: $"))
         guitar_to_add = Guitar(name, year, cost)
-        guitars.append(guitar_to_add, )
+        guitars.append(guitar_to_add)
         print(f"{guitar_to_add}, added")
         name = input("Name: ")
 
@@ -45,8 +52,11 @@ def main():
             print(f"Guitar {i}: {guitar.name:>20} ({guitar.year}), worth ${guitar.cost:10,.2f}{vintage_string}")
     else:
         print("No guitars")
+    print()
 
 
 if __name__ == '__main__':
     main()
     # load_file(FILENAME)
+
+# Add a soft function
