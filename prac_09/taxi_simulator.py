@@ -3,51 +3,57 @@ from prac_09.taxi import Taxi
 from prac_09.silver_service_taxi import SilverServiceTaxi
 
 
+def user_choice():
+    MENU = "q)uit, c)hoose taxi, d)rive"
+    print(MENU)
+    choice = input(">>> ").lower()
+    return choice
+
+
 def main():
     """Main program"""
     total_bill = 0
+    current_taxi = None  # Initialize current_taxi to None
     taxis = [Taxi("Prius", 100), SilverServiceTaxi("Limo", 100, 2),
              SilverServiceTaxi("Hummer", 200, 4)]
     print('Lets drive!')
-    print_menu()
-    choice = input('>>> ').lower()
+    choice = user_choice()
     while choice != 'q':
         if choice == 'c':
-            current_taxi = choose_taxi(taxis)
+            current_taxi = choose_taxi(current_taxi, taxis)
         elif choice == 'd':
-            if current_taxi:
-                current_taxi.start_fare()
-                distance_to_drive = get_valid_float_number('Drive how far? ')
-                current_taxi.drive(distance_to_drive)
-                trip_cost = current_taxi.get_fare()
-                print(f"Your {current_taxi.name} trip cost you ${trip_cost:.2f}")
-                total_bill += trip_cost
-            else:
-                print("You need to choose a taxi before you can drive")
+            total_bill = drive_taxi(current_taxi, total_bill)
         else:
             print('Invalid input')
-        print(f'Bill to date: {total_bill:.2f}')
-        print_menu()
-        choice = input('>>> ').lower()
+        print(f'Bill to date: ${total_bill:.2f}')
+        choice = user_choice()
     print(f'Total bill: ${total_bill:.2f}')
     print('Taxis are now: ')
     display_taxis(taxis)
     print('Finished')
 
 
-def choose_taxi(taxis):
+def drive_taxi(current_taxi, total_bill):
+    if current_taxi:
+        current_taxi.start_fare()
+        distance = float(input("Drive how far? "))
+        current_taxi.drive(distance)
+        trip_cost = current_taxi.get_fare()
+        print(f"Your {current_taxi.name} trip cost you ${trip_cost:.2f}")
+        total_bill += trip_cost
+    else:
+        print("You need to choose a taxi before you can drive")
+    return total_bill
+
+
+def choose_taxi(current_taxi, taxis):
     display_taxis(taxis)
-    taxi_choice = get_valid_number('Choose taxi: ')
+    taxi_number = get_valid_number("Choose your taxi: ")
     try:
-        current_taxi = taxis[taxi_choice]
+        current_taxi = taxis[taxi_number]
     except IndexError:
-        print('Invalid input: Choice not in list')
+        print("Invalid input")
     return current_taxi
-
-
-def print_menu():
-    """Print menu"""
-    print("q)uit, c)hoose taxi, d)rive")
 
 
 def display_taxis(taxis):
@@ -118,6 +124,6 @@ def run_tests():
 
 
 if __name__ == '__main__':
-    # main()
+    main()
     # display_taxis()
-    run_tests()
+    # run_tests()
