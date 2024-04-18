@@ -19,7 +19,7 @@ class UnreliableCar(Car):
         if random_number >= self.reliability:
             distance = 0
             # Continue with the regular driving logic
-            distance_driven = super().drive(distance)
-            # You can add any additional behavior specific to UnreliableCar here
-            # (e.g., logging reliability failures, etc.)
-            return distance_driven
+        distance_driven = super().drive(distance)
+        # You can add any additional behavior specific to UnreliableCar here
+        # (e.g., logging reliability failures, etc.)
+        return distance_driven
